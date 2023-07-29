@@ -351,7 +351,7 @@ def church_page():
 
         st.subheader("  " + choice + "-" + "PAG Church")
 
-        col6, col7, sid1, sid2 = st.columns([ 1, 1, 1, 1])
+        col6, col7, sid1, sid2 = col2.columns([ 1, 1, 1, 1])
 
         with col6:
 
