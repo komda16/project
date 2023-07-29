@@ -6,20 +6,11 @@ import plotly.express as px
 import sqlite3
 from streamlit_option_menu import option_menu
 from st_aggrid import AgGrid,GridOptionsBuilder,ColumnsAutoSizeMode
-
 import hashlib
-
-import streamlit.web.cli as stcli
-import sys
-
-st.markdown("""<style>[dat-testid="stMetric value"]{font-size:1px}<style>""", unsafe_allow_html=True)
 
 conn=sqlite3.connect("church.db",check_same_thread=False)
 conn.row_factory=lambda cursor,row: row[0]
 cur=conn.cursor()
-
-
-
 
 
 def add_user(a,b,c,d,e,f):
@@ -548,7 +539,6 @@ def church_page():
 
 
 def church_home():
-    st.markdown("""<style>[data-testid='stMetric value']{font-size:100px}<style>""", unsafe_allow_html=True)
     home_church()
 
 
@@ -869,33 +859,6 @@ def login():
         st.title('Praise King Jesus!: '
                  'May You Login Please At The Sidebar')
 
-
-    # username=st.text_input("User Name",'required')
-    # password=st.text_input('Password','required',type='password')
-    # but=st.button('Login')
-
-    # uname=cur.execute("SELECT username FROM user").fetchall()
-    # Password =cur.execute("SELECT password FROM user").fetchall()
-    # itle =cur.execute("SELECT title FROM user").fetchall()
-    #
-    # authenticator=stauth.Authenticate(uname,Password,'dash_bord',cookie_expiry_days=0)
-    # name,authentication_status,uname=authenticator.login('login','main')
-    # # if but==True:
-    #
-    #
-    # if authentication_status==False:
-    #     st.error('Username/Password is incorrect')
-    # if authentication_status==None:
-    #     st.warning('Please enter Your username and password')
-    # if authentication_status:
-    #     dash_bord()
-
-
-
-
-
-
-
 def finan_dash():
     st.subheader("P.A.G ANAKA ASSEMBLY")
     side1, col5, col6, col7, sid1, sid2 = st.columns([0.5, 2, 2, 2, 2, 2])
@@ -908,9 +871,6 @@ def finan_dash():
         fra = pd.DataFrame(da, columns=cols)
         global la
         la=st.selectbox('Period',can)
-
-
-
 
 
     with col6:
@@ -956,11 +916,6 @@ def finan_dash():
 
     col8, col9 = st.columns([0.1, 3])
 
-
-        # cha = fra.plot(kind='pie', autopct=lambda x: '{:.0f}'.format(x * to.sum() / 100))
-        # # to display chart
-        # st.pyplot(plt.gcf())
-
     with col9:
         st.markdown("")
         tab = cur.execute("""SELECT*FROM finance WHERE date=?""",(la,))
@@ -970,9 +925,6 @@ def finan_dash():
         fig = px.bar(data_frame=datas, x='CHURCH', y=["TITHE","OFFERTORY","SUNDAY_SCHOOL"], barmode='group',opacity=0.9,orientation="v"
                      )
         st.write(fig)
-
-
-
 
 def inven_dash():
     home_church()
@@ -999,9 +951,6 @@ def inven_dash():
 def church_finance_dash():
 
     col5, col6,sid1,  = st.columns([ 2, 2, 2])
-
-
-
     with col5:
         da = cur.execute("""SELECT tithe AND offertory AND sunday_school FROM finance WHERE church=?""",(choice,))
         can = cur.execute("""SELECT DISTINCT date FROM finance""").fetchall()
@@ -1026,9 +975,6 @@ def church_finance_dash():
 
         tc = sum(frame['TITHE'])
         st.metric(label="__TITHE__", value=tc)
-
-
-
 
     with sid1:
         dav = cur.execute("""SELECT*FROM finance WHERE date=? AND church=?""", (la,choice))
