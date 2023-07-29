@@ -114,7 +114,6 @@ def finance():
 
 
 def dash_bord():
-    st.markdown("""<style>[data-testid='stMetric value']{font-size:100px}<style>""", unsafe_allow_html=True)
 
     st.subheader("P.A.G ANAKA ASSEMBLY")
     side1, col5, col6, col7,sid1,sid2 = st.columns([0.5, 1, 1, 1, 1, 1])
@@ -308,15 +307,6 @@ def de_fin():
          cur.execute("""DELETE FROM finance WHERE date=? AND church=?""", (ex,lx))
          conn.commit()
          st.success('Entry Deleted')
-#
-# def update_user():
-#
-# def update_member():
-#
-# def update_finance():
-
-
-
 
 def Church():
 
@@ -408,12 +398,6 @@ def church_page():
             tc = frame['CATEGORY'].count()
             st.metric(label="YOUTH", value=tc)
             cur.row_factory=lambda cursor,row:row[0]
-
-
-
-
-
-
 
     st.markdown("___")
 
@@ -652,7 +636,12 @@ def view_user():
 
 
 def login():
-    st.markdown("""<style>[data-testid='stMetric value']{font-size:100px}<style>""", unsafe_allow_html=True)
+    hide="""<style>
+    #MainMenu{visibility: hidden;}
+    footer {visibility: hidden
+    <style>
+    """
+    st.markdown("""hide, unsafe_allow_html=True)
     global username
     username=st.sidebar.text_input('User Name')
     password=st.sidebar.text_input('Password',type='password')
