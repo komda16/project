@@ -58,8 +58,7 @@ pyproject_hooks==1.0.0
 pyrsistent==0.19.3
 python-dateutil==2.8.2
 python-decouple==3.8
-pytz==2023.3
-pytz-deprecation-shim==0.1.0.post0
+
 pywin32==306
 pywin32-ctypes==0.2.0
 PyYAML==6.0.1
