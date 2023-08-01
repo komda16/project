@@ -39,7 +39,7 @@ pandas==2.0.2
 patsy==0.5.3
 pefile==2023.2.7
 Pillow==9.5.0
-pip-tools==7.1.0
+
 pipenv==2023.7.23
 platformdirs==3.9.1
 plotly==5.15.0
