@@ -53,7 +53,7 @@ pyinstaller-hooks-contrib==2023.3
 PyJWT==2.8.0
 Pympler==1.0.1
 pyparsing==3.1.0
-pypiwin32==223
+
 pyproject_hooks==1.0.0
 pyrsistent==0.19.3
 
