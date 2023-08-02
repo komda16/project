@@ -636,8 +636,8 @@ def view_user():
 
 
 def login():
-    # hide_st_style ="""<style> #MainMenu {visibility: hidden;} footer {visibility: hidden;} <style>"""
-    # st.markdown(hide_st_style, unsafe_allow_html=True)
+    hide_st_style ="""<style> #MainMenu {visibility: hidden;} footer {visibility: hidden;} <style>"""
+    st.markdown(hide_st_style, unsafe_allow_html=True)
     global username
     username=st.sidebar.text_input('User Name')
     password=st.sidebar.text_input('Password',type='password')
