@@ -359,8 +359,6 @@ def church_page():
             ta = cur.execute("""SELECT*FROM member""")
             col = [column[0] for column in ta.description]
             df = pd.DataFrame(ta, columns=col)
-            # select column.
-            # tut = df['CHURCH'].df['CATEGORY']
             to = df['CHURCH'].value_counts()
 
             d = cur.execute("""SELECT*FROM member WHERE church=?""", (choice,))
@@ -647,7 +645,6 @@ def login():
         result=user_login(username,check_hashes(password,hashed_pswd))
         if result:
             fa=cur.execute('SELECT title FROM user WHERE username=?',(username,)).fetchone()
-
             if fa=='Assembly Pastor':
                 run()
             if fa=='Associate Pastor':
@@ -656,8 +653,6 @@ def login():
 
 
                 with col2:
-
-
                     st.subheader("  " + tas + "-" + "PAG Church")
 
                 c1, col6, col7, sid1, sid2 = st.columns([1, 1, 1, 1, 1])
