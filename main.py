@@ -987,7 +987,7 @@ def church_finance_dash():
            gridOptions=GridOptionsBuilder.from_dataframe(frame).build(),
            columns_auto_size_mode=ColumnsAutoSizeMode.FIT_CONTENTS
            )
-login()
+run()
 
 
 
