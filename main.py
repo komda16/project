@@ -638,8 +638,8 @@ def login():
     st.markdown(hide_st_style, unsafe_allow_html=True)
     global username
     with st.expander('login'):
-         username=st.sidebar.text_input('User Name')
-         password=st.sidebar.text_input('Password',type='password')
+         username=st.text_input('User Name')
+         password=st.text_input('Password',type='password')
     if st.checkbox('Login'):
 
         hashed_pswd=make_hashes(password)
