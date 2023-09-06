@@ -637,8 +637,9 @@ def login():
     hide_st_style ="""<style> #MainMenu {visibility: hidden;} footer {visibility: hidden;} <style>"""
     st.markdown(hide_st_style, unsafe_allow_html=True)
     global username
-    username=st.sidebar.text_input('User Name')
-    password=st.sidebar.text_input('Password',type='password')
+    with st.expander('login')
+         username=st.sidebar.text_input('User Name')
+         password=st.sidebar.text_input('Password',type='password')
     if st.sidebar.checkbox('Login'):
 
         hashed_pswd=make_hashes(password)
