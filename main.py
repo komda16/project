@@ -644,7 +644,7 @@ def login():
         result=user_login(username,check_hashes(password,hashed_pswd))
         if result:
             fa=cur.execute('SELECT title FROM user WHERE username=?',(username,)).fetchone()
-            st.write(fa)
+            run()
             if fa=='Assembly Pastor':
                 run()
             if fa=='Associate Pastor':
