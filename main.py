@@ -645,7 +645,7 @@ def login():
         if result:
             fa=cur.execute('SELECT title FROM user WHERE username=?',(username,)).fetchone()
             st.write(fa)
-            if fa=='Assembly Pastor':
+            if cur.execute('SELECT title FROM user WHERE username=?',(username,)).fetchone()=='Assembly Pastor':
                 
                 st.title('PAG WEST ACHOLI PASTORATE')
                 selected=st.sidebar.selectbox('MENU',["Home", "Churches","Finance", "Setting" ])
