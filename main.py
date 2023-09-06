@@ -643,6 +643,7 @@ def login():
         hashed_pswd=make_hashes(password)
         result=user_login(username,check_hashes(password,hashed_pswd))
         if result:
+            run()
             fa=cur.execute('SELECT title FROM user WHERE username=?',(username,)).fetchone()
             
             if fa=='Assembly Pastor':
