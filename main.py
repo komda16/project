@@ -17,7 +17,7 @@ show_page([
     page('one py','home'),
     page('two.py','other')
     
-]
+])
 
 
 def add_user(a,b,c,d,e,f):
