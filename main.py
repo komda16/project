@@ -7,7 +7,7 @@ import sqlite3
 from streamlit_option_menu import option_menu
 from st_aggrid import AgGrid,GridOptionsBuilder,ColumnsAutoSizeMode
 import hashlib
-import st_pages
+from st_pages import page, show_pages
 
 
 conn=sqlite3.connect("church.db",check_same_thread=False)
