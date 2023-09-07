@@ -7,10 +7,17 @@ import sqlite3
 from streamlit_option_menu import option_menu
 from st_aggrid import AgGrid,GridOptionsBuilder,ColumnsAutoSizeMode
 import hashlib
+import st_pages
+
 
 conn=sqlite3.connect("church.db",check_same_thread=False)
 conn.row_factory=lambda cursor,row: row[0]
 cur=conn.cursor()
+show_page([
+    page('one py','home'),
+    page('two.py','other')
+    
+]
 
 
 def add_user(a,b,c,d,e,f):
