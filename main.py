@@ -15,7 +15,7 @@ conn.row_factory=lambda cursor,row: row[0]
 cur=conn.cursor()
 show_page(
     [
-    page('one py','home'),
+    page('one.py','home'),
     page('two.py','other')
     
 ]
