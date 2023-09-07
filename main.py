@@ -13,11 +13,13 @@ from st_pages import page, show_pages
 conn=sqlite3.connect("church.db",check_same_thread=False)
 conn.row_factory=lambda cursor,row: row[0]
 cur=conn.cursor()
-show_page([
+show_page(
+    [
     page('one py','home'),
     page('two.py','other')
     
-])
+]
+)
 
 
 def add_user(a,b,c,d,e,f):
