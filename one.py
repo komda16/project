@@ -1,3 +1,6 @@
+import main.py
+
+
 st.title('PAG WEST ACHOLI PASTORATE')
 selected=st.sidebar.selectbox('MENU',["Home", "Churches","Finance", "Setting" ])
 
